@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" th:href="@{${baseUrl} + '/css/products.css'}" />
+</head>
+<body>
+
+    <h1>Products</h1>
+
+    <div class="product-grid">
+        <!-- Add product form -->
+        <div class="product">
+            <form th:action="@{/addProduct}" method="post" enctype="multipart/form-data">
+                <div class="product-image">
+                    <label for="productImage">Upload Image</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*"  />
+                </div>
+                <div class="product-details">
+                    <h2>Add Product</h2>
+                    <input type="text" name="productId" placeholder="Product ID" required />
+                    <input type="text" name="productName" placeholder="Product Name" required />
+                    <input type="text" name="description" placeholder="Description" required />
+                    <input type="number" name="price" step="0.01" placeholder="Price" required />
+                    <input type="number" name="inventory" placeholder="Inventory" required />
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+        <!-- Iterate over the products list -->
+        <div th:each="product : ${products}" class="product">
+            <div class="product-image">
+                <!-- Display product image here -->
+            </div>
+            <div class="product-details">
+                <h2 th:text="${product.productName}"></h2>
+                <p th:text="${product.description}"></p>
+                <p>$<span th:text="${product.price}"></span></p>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" />
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

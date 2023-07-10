@@ -1,0 +1,110 @@
+/* Products CSS */
+
+/* Body styles */
+body {
+    background-color: #F2F2E9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading styles */
+h1 {
+    color: #3B5726;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 16px 0;
+}
+
+
+
+/* Product grid styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Default to four columns */
+    gap: 16px;
+    padding: 16px;
+}
+
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Reduce to three columns for smaller screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Reduce to two columns for even smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: minmax(200px, 1fr); /* Reduce to one column for the smallest screens */
+    }
+}
+
+.product {
+    border: 1px solid #3B5726;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.product-image {
+    /* Adjust product image styles */
+}
+
+.product-details {
+    padding: 16px;
+    /* Adjust product details styles */
+}
+
+.product-details h2 {
+    margin: 0;
+}
+
+.product-details p {
+    margin-bottom: 16px;
+}
+
+.product-details p:last-child {
+    margin-bottom: 0;
+}
+
+.product-details input[type="number"] {
+    width: 80px;
+    padding: 4px;
+    border: 1px solid #3B5726;
+    border-radius: 4px;
+}
+
+.product-details button {
+    background-color: #5C8B3F;
+    color: #FFF;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+   border-radius: 4px;
+    margin-top: 8px;
+}
+
+.product-details button:hover {
+    background-color: #3B5726;
+}
+
+/* Link styles */
+a {
+    color: #3B5726;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
